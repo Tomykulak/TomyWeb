@@ -18,7 +18,6 @@ import Footer from "@/components/Footer.vue"
   background-repeat: repeat;
   padding: 0;
   margin: 0;
-  animation: fadeInGif 5s ease forwards;
   position: relative;
 }
 
@@ -31,10 +30,7 @@ import Footer from "@/components/Footer.vue"
   bottom: 0;
   background: black;
   animation: hideOverlay 5s ease forwards;
-}
-
-@keyframes fadeInGif {
-
+  animation-delay: 8s;
 }
 
 @keyframes hideOverlay {
