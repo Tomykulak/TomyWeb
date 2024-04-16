@@ -1,6 +1,6 @@
 <template>
   <v-container class="fill-height">
-    <v-responsive class="cmd-window
+    <v-responsive v-if="showCmdWindow" class="cmd-window
     d-flex
      bg-primary
       align-center
@@ -14,7 +14,7 @@
           <div class="control minimize"></div>
           <div class="control maximize"></div>
           <div class="control close">
-            <v-img :src="Cross"></v-img>
+            <v-img :src="Cross" @click="onExitCmdClick"></v-img>
           </div>
         </div>
       </div>
@@ -45,16 +45,31 @@
           <div class="text-caption text-green-accent-1">
             More something about me...
           </div>
-
         </v-col>
       </v-row>
+    </v-responsive>
+    <v-responsive v-else>
+      <v-btn @click="onStartCmdClick">
+        Start cmd
+      </v-btn>
     </v-responsive>
   </v-container>
 </template>
 
 
 <script setup lang="ts">
-import Cross from '@/assets/cross.png'
+import Cross from '@/assets/cross.png';
+import {ref} from "vue";
+
+const showCmdWindow = ref(true);
+
+const onExitCmdClick = () => {
+  showCmdWindow.value = false;
+}
+const onStartCmdClick = () => {
+  showCmdWindow.value = true;
+}
+
 </script>
 
 <style>

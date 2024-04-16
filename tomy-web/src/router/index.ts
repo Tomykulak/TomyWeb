@@ -8,9 +8,9 @@ const routes = [
     name: 'Home',
   },
   {
-    path: '/about-us',
-    component: () => import('@/views/AboutUs.vue'),
-    name: 'AboutUs',
+    path: '/about-me',
+    component: () => import('@/views/AboutMe.vue'),
+    name: 'AboutMe',
   },
   {
     path: '/:pathMatch(.*)*',

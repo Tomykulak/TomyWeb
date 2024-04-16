@@ -29,7 +29,7 @@
             <v-btn class="navButton">Home</v-btn>
           </router-link>
           <router-link
-            to="/about-us"
+            to="/about-me"
             class="textLink"
           >
             <v-btn class="navButton">About me</v-btn>
