@@ -93,11 +93,6 @@ const onStartCmdClick = () => {
 </script>
 
 <style>
-.skullButton {
-  background-image: url("@/assets/skull.png");
-  background-size: cover;
-  background-position: center;
-}
 
 .typeWriter {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -112,11 +107,11 @@ const onStartCmdClick = () => {
 .typeFirst {
   animation: typing 1.5s steps(30, end) forwards,
   blink-caret 1s step-end 3 1.5s forwards,
-  fadeOutCursor 0.5s ease-out 4s forwards;
+  fadeOutCursor 0.5s ease-out 3s forwards;
 }
 
 .typeSecond {
-  animation: typing 1.5s steps(30, end) forwards 6.25s, /* Delays typing until the first text completes all animations */ blink-caret 1.25s step-end 3 6s forwards, /* Start blinking after typing starts */ fadeOutCursor 0.5s ease-out 11s forwards; /* Fade cursor out after all blinks */
+  animation: typing 1.5s steps(30, end) forwards 3.25s, /* Delays typing until the first text completes all animations */ blink-caret 1.25s step-end 3 6s forwards, /* Start blinking after typing starts */ fadeOutCursor 0.5s ease-out 11s forwards; /* Fade cursor out after all blinks */
 }
 
 @keyframes typing {

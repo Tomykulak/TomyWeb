@@ -30,7 +30,7 @@ import Footer from "@/components/Footer.vue"
   bottom: 0;
   background: black;
   animation: hideOverlay 5s ease forwards;
-  animation-delay: 8s;
+  animation-delay: 5s;
 }
 
 @keyframes hideOverlay {
