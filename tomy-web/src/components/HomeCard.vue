@@ -8,8 +8,8 @@
        mx-auto my-auto
         pa-2"
     >
-      <div class="cli-top-bar">
-        <span class="cli-tab active">Tab 1 - Command Prompt</span>
+      <div class="cmd-top-bar">
+        <span class="cmd-tab active">Tab 1 - Command Prompt</span>
         <div class="window-controls">
           <div class="control minimize"></div>
           <div class="control maximize"></div>
@@ -126,18 +126,18 @@ import Cross from '@/assets/cross.png'
   border: 2px solid #333;
 }
 
-.cli-top-bar {
+.cmd-top-bar {
   display: flex;
   justify-content: space-between;
   padding: 4px;
 }
 
-.cli-tab {
+.cmd-tab {
   padding: 2px 6px;
   border-bottom-right-radius: 6px;
 }
 
-.cli-tab.active {
+.cmd-tab.active {
   background-color: #212121;
   border: 2px solid #424242;
   color: #00C853;
