@@ -1,6 +1,6 @@
 <template>
   <v-container class="fill-height">
-    <v-responsive class="myNameBox
+    <v-responsive class="cmd-window
     d-flex
      bg-primary
       align-center
@@ -8,6 +8,16 @@
        mx-auto my-auto
         pa-2"
     >
+      <div class="cli-top-bar">
+        <span class="cli-tab active">Tab 1 - Command Prompt</span>
+        <div class="window-controls">
+          <div class="control minimize"></div>
+          <div class="control maximize"></div>
+          <div class="control close">
+            <v-img :src="Cross"></v-img>
+          </div>
+        </div>
+      </div>
       <v-row class="mx-auto my-auto">
         <v-col cols="auto" class="">
           <div class="typeWriter typeFirst
@@ -35,6 +45,7 @@
           <div class="text-caption text-green-accent-1">
             More something about me...
           </div>
+
         </v-col>
       </v-row>
     </v-responsive>
@@ -43,14 +54,10 @@
 
 
 <script setup lang="ts">
-
+import Cross from '@/assets/cross.png'
 </script>
 
 <style>
-.myNameBox {
-  border-top: 20px solid #333; /* Slightly lighter border top to simulate a window */
-  min-height: 50px; /* Minimum height to ensure visibility even if empty */
-}
 
 .typeWriter {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -111,4 +118,44 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.cmd-window {
+  background-color: #000;
+  color: #33ff33;
+  font-family: 'Consolas', 'Courier New', monospace;
+  border: 2px solid #333;
+}
+
+.cli-top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px;
+}
+
+.cli-tab {
+  padding: 2px 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.cli-tab.active {
+  background-color: #212121;
+  border: 2px solid #424242;
+  color: #00C853;
+}
+
+.window-controls {
+  display: flex;
+}
+
+.control {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+.control.close {
+  filter: invert(100%);
+}
+
 </style>
