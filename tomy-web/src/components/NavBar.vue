@@ -22,17 +22,20 @@
             >
             -->
           </v-app-bar-nav-icon>
+
           <router-link
-            to="/"
-            class="textLink"
+            v-for="(button, index) in navigationButtons"
+            :key="index"
+            :to=button.route
+            v-slot="{ isActive }"
           >
-            <v-btn class="navButton">Home</v-btn>
-          </router-link>
-          <router-link
-            to="/about-me"
-            class="textLink"
-          >
-            <v-btn class="navButton">About me</v-btn>
+            <v-btn
+              class="navButton mx-2"
+              :class="{ active: isActive}"
+              variant="outlined"
+            >
+              {{ button.name }}
+            </v-btn>
           </router-link>
         </v-col>
       </v-row>
@@ -44,6 +47,18 @@
 import Logo from '@/assets/logo.png';
 import router from "@/router";
 import {reactive} from "vue";
+
+// List names and links for navBar
+const navigationButtons = [
+  { name: "Home", route: '/' },
+  { name: "About Me", route: '/about-me' },
+  // TODO finish buttons
+  /*
+  { name: "Projects", route: '/projects' },
+  { name: "Game", route: '/game' }
+   */
+];
+
 
 const state = reactive({
   navBarColor: "primary",
@@ -66,13 +81,12 @@ const onNavBarClickColorChange = () => {
 
 
 <style scoped>
-.textLink {
-  text-decoration: none;
-  color: inherit; /* This ensures the link color matches the button text color */
-}
-
 .navButton {
   color: #00E676;
+}
+.navButton.active {
+  color: black;
+  background: #00E676;
 }
 
 .brandLogo {

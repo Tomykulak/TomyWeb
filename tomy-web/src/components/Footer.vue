@@ -12,13 +12,13 @@
     >
       <v-card-text>
         <v-btn
-          v-for="icon in icons"
-          :key="icon"
+          v-for="(button, index) in buttons"
+          :key="index"
           class="mx-4 white--text"
-          icon
+          @click="navigateTo(button.link, !!button.link)"
           color="black"
         >
-          <v-icon size="24px">{{ icon }}</v-icon>
+          <v-icon size="24px">{{ button.icon }}</v-icon>
         </v-btn>
       </v-card-text>
 
@@ -37,16 +37,23 @@
 
 <script setup>
 import {
-  mdiBookOpenPageVariantOutline,
   mdiFacebook,
   mdiGithub
 } from "@mdi/js";
 // https://pictogrammers.com/library/mdi/
 
-const icons = [
-  mdiFacebook,
-  mdiGithub
-]
+const buttons = [
+  { icon: mdiFacebook, link: 'https://www.facebook.com/tomas.okruhlica.1' },
+  { icon: mdiGithub, link: 'https://github.com/Tomykulak?tab=repositories' }
+];
+
+function navigateTo(link, isExternal = false) {
+  if (isExternal) {
+    window.open(link, '_blank');
+  } else {
+    router.push(link);
+  }
+}
 
 </script>
 
