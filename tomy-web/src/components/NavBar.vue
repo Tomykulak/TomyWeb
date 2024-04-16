@@ -22,7 +22,6 @@
             >
             -->
           </v-app-bar-nav-icon>
-
           <router-link
             v-for="(button, index) in navigationButtons"
             :key="index"
@@ -52,6 +51,7 @@ import {reactive} from "vue";
 const navigationButtons = [
   { name: "Home", route: '/' },
   { name: "About Me", route: '/about-me' },
+  { name: "Game", route: '/game' },
   // TODO finish buttons
   /*
   { name: "Projects", route: '/projects' },
@@ -82,11 +82,11 @@ const onNavBarClickColorChange = () => {
 
 <style scoped>
 .navButton {
-  color: #00E676;
+  color: var(--green-accent-3);
 }
 .navButton.active {
   color: black;
-  background: #00E676;
+  background: var(--green-accent-3);
 }
 
 .brandLogo {

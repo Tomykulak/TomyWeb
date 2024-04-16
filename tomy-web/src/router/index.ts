@@ -13,10 +13,15 @@ const routes = [
     name: 'AboutMe',
   },
   {
+    path: '/game',
+    component: () => import('@/views/Game.vue'),
+    name: 'Game',
+  },
+  {
     path: '/:pathMatch(.*)*',
     component: () => import('@/views/NotFound.vue'),
     name: 'NotFound',
-  }
+  },
 ]
 
 const router = createRouter({

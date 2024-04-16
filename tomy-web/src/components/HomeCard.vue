@@ -32,25 +32,25 @@
         </v-col>
       </v-row>
       <v-spacer class="my-5"/>
-      <v-row class="mx-auto my-auto text-white ">
-        <v-col cols="sm-5" class="">
-          <div class="text-caption text-green-accent-1">
-            Something about me...
-          </div>
-        </v-col>
-      </v-row>
-      <v-spacer class="my-5"/>
       <v-row class="mx-auto my-auto text-white">
         <v-col cols="sm-4" class="">
-          <div class="text-caption text-green-accent-1">
-            More something about me...
+          <div class="text-caption text-green-accent-2">
+            Get to know me? [<strong>k</strong>]
+            <br>
+            Wanna play a game? [<strong>y</strong>]/[<strong>n</strong>]
+            <v-text-field
+              variant="underlined"
+              v-model="cmdText"
+              @keyup.enter="gameStart"
+            ><div class="text-green-accent-1">C:\Users\UNKNOWN_ENTITY></div>
+            </v-text-field>
           </div>
         </v-col>
       </v-row>
     </v-responsive>
     <v-responsive v-else>
       <v-btn @click="onStartCmdClick">
-        Start cmd
+        Start CommandLine
       </v-btn>
     </v-responsive>
   </v-container>
@@ -60,6 +60,26 @@
 <script setup lang="ts">
 import Cross from '@/assets/cross.png';
 import {ref} from "vue";
+import router from "@/router";
+
+const cmdText = ref("");
+
+const gameStart = () => {
+  switch(cmdText.value){
+    case "k":
+      router.push("/about-me");
+      break;
+    case "y":
+      router.push("/game");
+      break;
+    case "n":
+      cmdText.value = "Think twice..."
+      break;
+    default:
+      cmdText.value = "TRY AGAIN!!!";
+      break;
+  }
+}
 
 const showCmdWindow = ref(true);
 
@@ -73,6 +93,11 @@ const onStartCmdClick = () => {
 </script>
 
 <style>
+.skullButton {
+  background-image: url("@/assets/skull.png");
+  background-size: cover;
+  background-position: center;
+}
 
 .typeWriter {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -108,23 +133,17 @@ const onStartCmdClick = () => {
     border-color: transparent
   }
   50% {
-    border-color: #00e676
+    border-color: var(--green-accent-3);
   }
 }
 
 @keyframes fadeOutCursor {
   from {
-    border-right-color: #00e676;
+    border-right-color: var(--green-accent-3);
   }
   to {
     border-right-color: transparent;
   }
-}
-
-.main_thumbnail {
-  background: rgb(0, 0, 0, 0);
-  border-radius: 8px;
-  border: 2px solid #831ad3;
 }
 
 .loading-container {
@@ -135,9 +154,6 @@ const onStartCmdClick = () => {
 }
 
 .cmd-window {
-  background-color: #000;
-  color: #33ff33;
-  font-family: 'Consolas', 'Courier New', monospace;
   border: 2px solid #333;
 }
 

@@ -7,10 +7,10 @@
 </template>
 
 <script setup lang="ts">
-
 </script>
 
 <style>
+@import "@/assets/base.css";
 .neo-background-dark {
   background-color: black;
   padding: 0;
