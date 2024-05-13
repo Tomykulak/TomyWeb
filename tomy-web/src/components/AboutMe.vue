@@ -25,12 +25,25 @@
         </v-chip>
       </v-container>
       ]
+      <div class="">
+        Take a look at my
+        <v-btn
+          :class="['animate__animated', isShaking ? 'animate__pulse' : '']"
+          @mouseover="handleMouseOver"
+          @mouseleave="handleMouseLeave"
+          color="purple-accent-4"
+        >Projects
+        </v-btn>
+      </div>
     </div>
   </v-container>
+
 </template>
 
 <script setup lang="ts">
-  let skills = [
+  import {ref} from "vue";
+
+  let skills = ref([
     "Python",
     "C++",
     "Java",
@@ -39,7 +52,15 @@
     "Kotlin",
     "Swift",
     "HTML+CSS",
-  ]
+  ])
+  let isShaking = ref(false);
+  let handleMouseOver = () => {
+    isShaking.value = true;
+  }
+
+  let handleMouseLeave = () => {
+    isShaking.value = false;
+  }
 </script>
 
 <style scoped>
