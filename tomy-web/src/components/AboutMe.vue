@@ -9,11 +9,13 @@
       </div><br>
 
       <div class="text-h5">I'm a <span class="text-uppercase text-purple-accent-4">software developer.</span></div><br>
-      I enjoy being <v-chip class="bg-black text-purple-accent-2">creative</v-chip> and always try to
+      I love being <v-chip class="bg-black text-purple-accent-2">creative</v-chip> and always strive to
       <v-chip class="bg-black text-purple-accent-2">learn</v-chip> new skills.<br>
       These are my skills that I'm constantly improving = [
       <br>
-      <v-container class="d-flex flex-column align-lg-start">
+      <v-container
+        class="d-flex flex-column align-start"
+      >
         <v-chip
           v-for="skill in skills"
           :key="skill"
@@ -31,6 +33,7 @@
   let skills = [
     "Python",
     "C++",
+    "Java",
     "Javascript",
     "Typescript",
     "Kotlin",
