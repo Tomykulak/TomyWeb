@@ -46,7 +46,7 @@
 import {ref} from "vue";
 import Loading from "@/components/Loading.vue";
 
-const isLoading = ref(true); // Initialize isLoading as a reactive boolean reference
+const isLoading = ref(false); // Initialize isLoading as a reactive boolean reference
 
 const onLoadingStopClick = () => {
   console.log('Loading button clicked');

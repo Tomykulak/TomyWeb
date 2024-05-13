@@ -1,14 +1,14 @@
 <template>
   <div class="fill-height neo-background">
     <NavBar/>
-    <HomePage/>
+    <HomeCard/>
     <Footer/>
   </div>
 </template>
 
 <script lang="ts" setup>
 import NavBar from '@/components/NavBar.vue'
-import HomePage from "@/components/HomePage.vue";
+import HomeCard from "@/components/HomeCard.vue";
 import Footer from "@/components/Footer.vue"
 </script>
 
