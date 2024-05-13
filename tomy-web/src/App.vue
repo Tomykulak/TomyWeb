@@ -11,6 +11,7 @@
 
 <style>
 @import "@/assets/base.css";
+@import "animate.css";
 .neo-background-dark {
   background-color: black;
   padding: 0;

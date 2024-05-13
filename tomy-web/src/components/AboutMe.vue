@@ -21,7 +21,7 @@
           :key="skill"
           class="my-1"
         >
-          {{ "'"+ skill +"'"+"," }}
+          {{ "'" + skill + "'" + "," }}
         </v-chip>
       </v-container>
       ]
