@@ -9,19 +9,7 @@
     <v-responsive class="d-flex align-center text-center fill-height">
       <v-row class=" ">
         <v-col cols="auto">
-          <v-app-bar-nav-icon
-            class="pa-2"
-            @click="onMenuClick"
-          >
-            <!--
-            <img
-              :src=Logo
-              alt="logo is here"
-              style="height: 40px;"
-              class="brandLogo"
-            >
-            -->
-          </v-app-bar-nav-icon>
+
           <router-link
             v-for="(button, index) in navigationButtons"
             :key="index"
@@ -51,10 +39,11 @@ import {reactive} from "vue";
 const navigationButtons = [
   { name: "Home", route: '/' },
   { name: "About Me", route: '/about-me' },
+  { name: "Projects", route: '/projects' },
   { name: "Game", route: '/game' },
+
   // TODO finish buttons
   /*
-  { name: "Projects", route: '/projects' },
   { name: "Game", route: '/game' }
    */
 ];

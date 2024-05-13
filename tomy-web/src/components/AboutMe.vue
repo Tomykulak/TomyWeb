@@ -11,7 +11,7 @@
       <div class="text-h5">I'm a <span class="text-uppercase text-purple-accent-4">software developer.</span></div><br>
       I love being <v-chip class="bg-black text-purple-accent-2">creative</v-chip> and always strive to
       <v-chip class="bg-black text-purple-accent-2">learn</v-chip> new skills.<br>
-      These are my skills that I'm constantly improving = [
+      This is my expertise that I'm constantly improving = [
       <br>
       <v-container
         class="d-flex flex-column align-start"
@@ -25,15 +25,19 @@
         </v-chip>
       </v-container>
       ]
-      <div class="">
+      <div class="py-4">
         Take a look at my
-        <v-btn
-          :class="['animate__animated', isShaking ? 'animate__pulse' : '']"
-          @mouseover="handleMouseOver"
-          @mouseleave="handleMouseLeave"
-          color="purple-accent-4"
-        >Projects
-        </v-btn>
+        <router-link to="/projects">
+          <v-btn
+            :class="['animate__animated', isShaking ? 'animate__pulse' : '']"
+            class="bg-black text-purple-accent-2"
+            @mouseover="handleMouseOver"
+            @mouseleave="handleMouseLeave"
+            color=""
+          >Projects
+          </v-btn>
+        </router-link>
+
       </div>
     </div>
   </v-container>
