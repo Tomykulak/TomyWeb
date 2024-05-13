@@ -24,13 +24,13 @@
       </v-card-text>
 
       <v-card-text class="white--text pt-0">
-        This web was done using Vue, Vuetify and written in TypeScript. <br>
+        This web is built using Vue, Vuetify and it's written in a TypeScript. <br>
       </v-card-text>
 
       <v-divider></v-divider>
 
       <v-card-text class="white--text">
-        {{ new Date().getFullYear() }} — <strong>Tomy Personal Web</strong>
+        {{ new Date().getFullYear() }} — <strong>Okruhlica</strong> Personal Web
       </v-card-text>
     </v-card>
   </v-footer>
