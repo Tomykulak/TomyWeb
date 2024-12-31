@@ -1,5 +1,4 @@
-# TomyWeb
-My personal web
+# default
 
 ## Project setup
 
